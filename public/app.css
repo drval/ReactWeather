@@ -1,0 +1,26 @@
+.greeterMessage {
+    border: 1px solid green;
+    padding: 10px;
+    margin: 10px;
+}
+
+.greeterForm {
+    border: 1px solid blue;
+    padding: 10px;
+    margin: 10px;
+}
+
+.greeterEx {
+    border: 1px solid red;
+    width: 300px;
+    padding: 5px;
+}
+
+.greeterForm form input {
+    width: 100%;
+}
+
+.greeterForm form textarea {
+    margin-top: 5px;
+    width: 100%;
+}
