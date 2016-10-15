@@ -1,9 +1,14 @@
+var webpack = require('webpack');
+
 module.exports = {
     entry: './app/app.jsx',
     output: {
         path: __dirname,
         filename: './public/bundle.js'
     },
+    /*plugins: [
+        new webpack.optimize.UglifyJsPlugin({minimize:true})
+    ],*/
     resolve: {
         root: __dirname,
         alias: {

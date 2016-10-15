@@ -5,7 +5,7 @@ var WEATHER_API = "http://api.openweathermap.org/data/2.5/weather?appid=fb5c18bc
 
 module.exports = {
     getTemp: function (location) {
-        var encLoc = encodeURIComponent(location+',ru');
+        var encLoc = encodeURIComponent(location);
         var reqUrl = `${WEATHER_API}&q=${encLoc}`;
         return axios.get(reqUrl).then(
             function (res) {
