@@ -1,5 +1,4 @@
 var React = require('react');
-var Examples = require('Examples');
 
 var Examples = React.createClass({
     render: function () {
