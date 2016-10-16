@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+var CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = {
     entry: [
@@ -15,11 +16,30 @@ module.exports = {
         filename: './public/bundle.js'
     },
     plugins: [
+        new webpack.optimize.UglifyJsPlugin({
+            beautify: false,
+            comments: false,
+            compress: {
+                sequences     : true,
+                booleans      : true,
+                loops         : true,
+                unused      : true,
+                warnings    : false,
+                drop_console: true,
+                unsafe      : true
+            }
+        }),
+        new CompressionPlugin({
+            asset: "[path].gz[query]",
+            algorithm: "gzip",
+            test: /\.js$/,
+            threshold: 10240,
+            minRatio: 0.8
+        }),
         new webpack.ProvidePlugin({
             '$': 'jquery',
             'jQuery': 'jquery'
         })
-      //  new webpack.optimize.UglifyJsPlugin({minimize:true})
     ],
     resolve: {
         root: __dirname,
