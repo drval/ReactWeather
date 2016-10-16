@@ -1,14 +1,26 @@
 var webpack = require('webpack');
 
 module.exports = {
-    entry: './app/app.jsx',
+    entry: [
+        'script!jquery/dist/jquery.min.js',
+        'script!foundation-sites/dist/foundation.min.js',
+        './app/app.jsx'
+    ],
+    externals: {
+        jquery: 'jQuery'
+    },
+
     output: {
         path: __dirname,
         filename: './public/bundle.js'
     },
-    /*plugins: [
-        new webpack.optimize.UglifyJsPlugin({minimize:true})
-    ],*/
+    plugins: [
+        new webpack.ProvidePlugin({
+            '$': 'jquery',
+            'jQuery': 'jquery'
+        })
+      //  new webpack.optimize.UglifyJsPlugin({minimize:true})
+    ],
     resolve: {
         root: __dirname,
         alias: {
