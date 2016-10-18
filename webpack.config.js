@@ -16,7 +16,7 @@ module.exports = {
         filename: './public/bundle.js'
     },
     plugins: [
-        new webpack.optimize.UglifyJsPlugin({
+        /*new webpack.optimize.UglifyJsPlugin({
             beautify: false,
             comments: false,
             compress: {
@@ -35,7 +35,7 @@ module.exports = {
             test: /\.js$/,
             threshold: 10240,
             minRatio: 0.8
-        }),
+        }),*/
         new webpack.ProvidePlugin({
             '$': 'jquery',
             'jQuery': 'jquery'
@@ -53,7 +53,7 @@ module.exports = {
             WeatherMessage: 'app/components/WeatherMessage.jsx',
             openWeatherMap: 'app/api/openWeatherMap.jsx',
             ErrorModal: 'app/components/ErrorModal.jsx',
-            applicationStyles: 'app/styles/app.css'
+            applicationStyles: 'app/styles/app.scss'
         },
         extensions: ['', '.js', '.jsx']
     },
